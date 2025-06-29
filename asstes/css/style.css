@@ -1,0 +1,120 @@
+@font-face {
+    font-family: "Hero New";
+    src: url('../fonts/Hero\ New\ Regular.otf');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family:"Hero New" ;
+    src: url('../fonts/Hero\ New\ Bold.otf');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Hero New";
+    src: url('../fonts//Hero\ New\ ExtraBold.otf');
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face{
+    font-family: "Neue Reman Gt";
+    src: url("../fonts/NeueRemanGt-Heavy.otf");
+    font-weight: 800;
+    font-style: normal;
+    
+
+}
+:root{
+    --primary_color :#240D4B;
+    --button_color: #AEE9B6;
+    --secondary_color:#41286C; 
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#header{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 0 100px;
+        margin-bottom: -180px;
+        position: relative;
+        z-index: 2;   
+            row-gap: 33px;     
+       
+}
+#h_row1{
+    display: flex;
+    width: 100%;
+    padding-top: 10px
+    ;
+    justify-content: end;
+    gap: 50px;
+}
+#h_row1 .list1{
+    display: flex;
+    gap:5px;
+    justify-content: center;
+    align-items: center;
+    font-family: "Hero New";
+    font-weight: 400;
+    font-size: 16px;
+    color: white;
+    
+    
+}
+
+#social_media{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+#h_row2{
+   
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+}
+.custom_menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.menu_list {
+display: flex;
+gap: 63px;
+align-items: center;
+}
+.menu_list ul {
+        display: flex;
+    list-style-type: none;
+    gap: 63px;
+    
+}
+.menu_list a{
+    color: white;
+    text-decoration: none;
+    font-family: "Hero new";
+    font-weight: 800;
+        font-size: 19px;
+}
+
+#logo{
+    width: 373;
+    height: 82px;
+}
+
+#menus #h_button{
+    padding: 16px 37px;
+    border-radius: 11px;
+    background-color: #AEE9B6;
+    font-family: "Neue Reman Gt";
+    font-size: 19px;
+    line-height: 19px;
+}
