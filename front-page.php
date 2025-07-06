@@ -25,9 +25,26 @@ get_header();
 
 <section id="website_blog" class="container">
 
+                <div class="website_blog_upper_layer" id="website_first_box">
+                        <div class="first_box_column1">
+                        <h2 class="website_blog_heading">
+                                Our Websites
+                        </h2>
+                        <span>
+                             <img id='leftimg' src="<?php echo get_template_directory_uri(); ?>/asstes/img/leftarrow.png "/>
+                             <img id="rightimg" src="<?php echo get_template_directory_uri(); ?>/asstes/img/rightarrow.png"/>   
+                        </span>
+                        </div>
+
+                        <div class="first_box_column2">
+                                <button class="buttons">Our Websites</button>
+
+                        </div>
+                </div>
+
         <div class="swiper mySwiper">
-                <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
+                <div id="leftarrow" class="swiper-button-prev"></div>
+                <div id="rightarrow" class="swiper-button-next"></div>
                   <div class="swiper-wrapper">
                   <?php 
                   
@@ -43,14 +60,14 @@ get_header();
                                                 <div class="swiper-slide">
                                                       
                                                         
-                                                        <div>
+                                                        <div class="website_post_image">
                                                                 <?php the_post_thumbnail("full"); ?>
                                                         </div>
 
-                                                        <h3>
+                                                        <h3 class="website_post_title">
                                                                 <?php the_title(); ?>
                                                         </h3>
-                                                        <p>
+                                                        <p class="website_post_desc">
                                                               <?php   the_excerpt(); ?>
                                                         </p>
                                                         
@@ -72,11 +89,27 @@ get_header();
                         </section>
                          <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
                          <script>
+
                                 
+                                document.addEventListener("DOMContentLoaded",()=>{
+                                const larrow = document.querySelector("#leftarrow")
+                                const rarrow = document.querySelector("#rightarrow")
+                                const leftimg = document.querySelector("#leftimg")
+                                const rightimg = document.querySelector("#rightimg")
+                                        console.log(leftarrow)
+                                       leftimg.addEventListener("click",()=>{
+                                        larrow.click()
+                                       })
+                                       rightimg.addEventListener("click",()=>{
+                                        rarrow.click()
+                                       })
+
+                                })
 
 const swiper = new Swiper('.mySwiper',{
     slidesPerView:3.5,
-    spaceBetween:20,  
+    spaceBetween:20, 
+    loop:true, 
       navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
