@@ -22,6 +22,68 @@ get_header();
                 <img src="<?php echo get_template_directory_uri(); ?>/asstes/img/hcol2.png" />
         </div>
 </section>
+
+<section id="website_blog" class="container">
+
+        <div class="swiper mySwiper">
+                <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+                  <div class="swiper-wrapper">
+                  <?php 
+                  
+                        $args = array(
+                                "post_type" => "website",
+                                "post_per_page" => -1,
+                        );
+
+                        $query = new WP_Query($args);
+                                if($query->have_posts()):
+                                        while($query->have_posts()): $query->the_post();
+                                        ?>
+                                                <div class="swiper-slide">
+                                                      
+                                                        
+                                                        <div>
+                                                                <?php the_post_thumbnail("full"); ?>
+                                                        </div>
+
+                                                        <h3>
+                                                                <?php the_title(); ?>
+                                                        </h3>
+                                                        <p>
+                                                              <?php   the_excerpt(); ?>
+                                                        </p>
+                                                        
+                                                </div>
+
+
+ 
+
+                                        <?php
+                                        endwhile;
+                                        wp_reset_postdata();
+                                endif;
+                                        ?>
+
+                  ?>      
+                </div>
+        </div>
+
+                        </section>
+                         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+                         <script>
+                                
+
+const swiper = new Swiper('.mySwiper',{
+    slidesPerView:3.5,
+    spaceBetween:20,  
+      navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+})
+                         </script>
 <?php
 get_footer();
 ?>

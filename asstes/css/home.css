@@ -101,3 +101,12 @@
     height: 33px;
     object-fit: contain;
 }
+#website_blog{
+    padding: 100px 100px;
+
+}
+.swiper .swiper-slide img{
+    width: 363px;
+    height: 220px;
+    object-fit: cover;
+}
